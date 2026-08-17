@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+# Standalone workspace containing just what this pipeline needs. If you
+# already have these crates in a larger workspace (e.g. your existing
+# spec_engine/sec_net_engine merged workspace), just drop
+# dementia_spec_screen/ in there instead and add it to that workspace's
+# `members` list -- it only depends on spectral_hypergraph and neural_hmm
+# by path.
+members = ["dementia_spec_screen", "neural_hmm", "spectral_hypergraph"]
+
+[profile.release]
+lto = true
+opt-level = 3
